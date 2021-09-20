@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' lang='pt-br'>
+    </head>
+    <body>
+        <script>
+		alert("Inicio");
+		var n1;
+		var n2;
+		var mais;
+		var menos;
+		var vezes;
+		var divi;
+		var resto;
+		
+		n1 = parseFloat(prompt("Insira o valor 1"));
+		n2 = parseFloat(prompt("Insira o valor 2"));
+		mais = n1 + n2;
+		menos = n1 - n2;
+		vezes = n1 * n2;
+		divi = n1 / n2;
+		resto = n1 % n2;
+		alert("Mais = " + mais + "\nMenos = "+ menos + "\nProduto = "+ vezes + "\nDivisão = "+ divi + "\nResto = "+ resto);
+		var decisao = confirm("Gostou?");
+		if (decisao)
+		{
+			alert("Obrigado");
+		}
+		else
+			alert("OH NO");
+		
+		</script>
+    </body>
+</html>
