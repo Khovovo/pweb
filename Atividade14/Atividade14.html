@@ -1,0 +1,82 @@
+	<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Atividade 14</title>
+</head>
+
+	<script>
+		function validaEmail() {
+			var email = document.getElementById('email').value;
+			var emailRGEX = /^[a-zA-Z0-9_.]{0,50}[@][a-z]{0,50}[.][a-z]{3}$/;
+			return emailRGEX.test(email);
+		}
+
+		function validarDados() {
+			var email = document.getElementById('email');
+			var nome = document.getElementById('nome');
+			var comentario = document.getElementById('comentario');
+			var sim = document.getElementById('radio_sim');
+			var nao = document.getElementById('radio_nao');
+
+			if (nome.value.length < 10) {
+				alert("NOME INVÁLIDO. Minimo de 10 caracteres.");
+				return false;
+			}
+			if (comentario.value.length < 20) {
+				alert("COMENTÁRIO INVÁLIDO. Minimo de 20 caracteres");
+				return false;
+			}
+			if (!validaEmail()) {
+				alert("Favor inserir um email válido.");
+				return false;
+			}
+
+			if (sim.checked) {
+				alert("Volte sempre á esta pagina!");
+			}
+			if (nao.checked) {
+				alert("Que bom que voce voltou a visitar esta pagina!");
+			}
+		}
+	</script>
+<body style="background-color:#FFE135 ;">
+
+	<p>
+		<center>
+			<h1>
+				<font color="white">
+					Formulario principal
+					<hr color="white">
+				</font>
+
+			</h1>
+
+		</center>
+
+	</p>
+	<form method="post" name="pesquisa" id="pesquisa"
+		onsubmit="return validarDados();setTimeout(donothing, 50000);">
+
+
+		<label for="nome">Nome:</label><br>
+		<input type="text" id="nome" name="nome"><br>
+		<label for="nome">E-mail:</label><br>
+		<input type="text" id="email" name="email"><br>
+		<label for="nome">Comentario:</label><br>
+		<input type="text" id="comentario" name="comentario"><br>
+
+
+	</form>
+
+		<h2>Pesquisa</h2>
+		Primeira vez na página??<br>
+		<input type="radio" id="radio_sim" name="primeira_vez">Sim
+		<input type="radio" id="radio_nao" name="primeira_vez">Não
+		<p>
+		<input name="Submit" type="submit" form="pesquisa" value="Enviar">
+		<input name="Reset" type="reset" form="pesquisa" value="Limpar">
+</body>
+</html>
